@@ -1,0 +1,12 @@
+ssh access to router configuration:
+
+SSH(config)# ip domain-name [Nombre] (1)
+SSH(config)# crypto key generate rsa(2)
+SSH(config)# line vty 0 4
+SSH(config-line)# transport input ssh(3)
+SSH(config-line)# login local
+SSH(config)# username [usuario] privilege 15 password [password] (4)
+SSH(config)# enable secret [password] (5)
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
