@@ -1,4 +1,4 @@
-ssh access to router configuration:
+_________________________________________ssh access to router configuration:
 
 SSH(config)# ip domain-name [Nombre] (1)
 SSH(config)# crypto key generate rsa(2)
@@ -8,5 +8,16 @@ SSH(config-line)# login local
 SSH(config)# username [usuario] privilege 15 password [password] (4)
 SSH(config)# enable secret [password] (5)
 
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+_________________________________________Copiar running-config a un servidor TFTP:
 
+router01#copy running-config tftp
+
+_________________________________________Copia de Seguridad y Restauracion mediante USB:
+
+a USB:
+R1# copy run usbflash0:/
+
+desde USB
+R1# copy usbflash0:/R1-Config running-config
+
+__________________________________________
