@@ -1,3 +1,19 @@
+________________________________________Show
+
+()show ip interface brief
+()show interface trunk
+()show controllers FastEthernet 1/1        >>Mostrar Controladores de las interfaces
+
+()#show interfaces
+Es un comando muy util. En la busqueda de Errores en la red podemos identificarlo en los campos: Input/Output Errors:
+Runt Frames: Tramas de menor tamaña a las permitidas (Fragmentos de colision)
+Giants: Tramas de tamaño gigante que supera el maximo permitido.
+CRC Errors: Errores en los medios o en los cables (Interferencias-Cables dañados-Ruido en enlace)
+Collisions: Normales en Half-Duplex. No deberían suceder en modo Full-Duplex.
+Late Collisions: Colisiones tardias. Generalmente se debe a long excesiva del cable o config Half(extremo1)-Full(extremo2)
+
+
+
 ________________________________________Vlan Interface
 
 Switch()#conf term
