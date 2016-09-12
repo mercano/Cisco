@@ -9,7 +9,14 @@ Switch()#copy running-config startup-config
 Switch()#conf term
 Switch(config)#ip default-gateway 192.9.200.1
 Switch(config)#end
-Swwitch()copy running-config startup-config
+Switch()copy running-config startup-config
+
+Switch(config)#interface fa0/0
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#switchport trunk native vlan 99
+Switch(config-if)end
+
+
 
 
 ________________________________________Config Ruta estatica en Router
