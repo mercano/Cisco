@@ -46,6 +46,7 @@ Router(config)#ip route 192.168.1.0 255.255.255.0 fa0/1
 
 _________________________________________ssh access to router configuration:
 
+SSH(config)# ip ssh version 2
 SSH(config)# ip domain-name [Nombre] (1)
 SSH(config)# crypto key generate rsa(2)
 SSH(config)# line vty 0 4
@@ -53,6 +54,10 @@ SSH(config-line)# transport input ssh(3)
 SSH(config-line)# login local
 SSH(config)# username [usuario] privilege 15 password [password] (4)
 SSH(config)# enable secret [password] (5)
+
+
+Nota: para eliminar el par de claves RSA, use el comando crypto key zeroize rsa del modo de configuración global. 
+Después de eliminarse el par de claves RSA, el servidor SSH se deshabilita automáticamente.
 
 _________________________________________Copiar running-config a un servidor TFTP:
 
