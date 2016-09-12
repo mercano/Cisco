@@ -1,3 +1,26 @@
+________________________________________Vlan Interface
+
+Switch()#conf term
+Switch(config)#interface vlan 99
+Switch(config-if)#ip addr 192.9.200.99 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#end
+Switch()#copy running-config startup-config
+Switch()#conf term
+Switch(config)#ip default-gateway 192.9.200.1
+Switch(config)#end
+Swwitch()copy running-config startup-config
+
+
+________________________________________Config Ruta estatica en Router
+
+Router> enable 
+Router# configure terminal
+Router(config)#ip route 192.168.2.0 255.255.255.0 fa0/0
+Router(config)#ip route 192.168.1.0 255.255.255.0 fa0/1
+
+
+
 _________________________________________ssh access to router configuration:
 
 SSH(config)# ip domain-name [Nombre] (1)
