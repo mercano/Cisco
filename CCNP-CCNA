@@ -16,6 +16,16 @@ Late Collisions: Colisiones tardias. Generalmente se debe a long excesiva del ca
 
 ________________________________________Vlan Interface
 
+switchport access vlan "numero"       //se usa para crear una Vlan
+show mac address-table                //nos ayuda a ver los puertos asignados a Vlans
+switchport mode trunk                 //para habilitar los enlaces troncales
+show interfaces trunk                 //verificar enlaces troncales establecidos
+
+DTP: Protocolo de enlace troncal dinamico. Default ON. Punto a Punto. Negociacion de los enlaces troncales.
+
+delete flash:vlan.dat & erase startup-config //Retorna el switch a su condicion de fabrica con una Vlan predeterminada.
+
+
 Switch()#conf term
 Switch(config)#interface vlan 99
 Switch(config-if)#ip addr 192.9.200.99 255.255.255.0
