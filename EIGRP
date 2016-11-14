@@ -1,0 +1,31 @@
+EIGRP IPV6
+
+(config)#ipv6 unicast-routing    //ADD IPV6 CAPABILITIES EN EL ROUTER:
+(config)#ipv6 router eigrp 2     //el nro. 2 corresponde al Sistema Autonomo
+(config-rtr)#eigrp routing-id    //comando solo para IPv6 
+(config-rtr)#no shutdown         //le damos vida a eigrp para IPv6. x default esta desactivado
+
+En las interfaces:
+
+(config-if)#ipv6 eigrp 2        //lo mismo en todas las interfaces
+
+Check it out
+
+()#show ipv6 route
+()#show ipv6 protocols
+()#show ipv6 eigrp neighbors
+
+Misc
+
+(config)#ipv6 eigrp 2
+(config-rtr)#passive-interface gi0/0   //este comando controla el anuncio de informacion de routing
+                                       //permite la supresion de actualizaciones de routing en algunas interfaces
+                                       //en eigrp suprime el intercambio de paquetes de saludo entre routers...
+                                       //...que genera una perdida de relacion vecina, por lo tanto se utiliza...
+                                       //...solamente en interfaces que no poseen routers conectados-
+
+
+
+_________________________________________________________________________________________________________
+
+
