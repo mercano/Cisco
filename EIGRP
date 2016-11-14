@@ -11,9 +11,9 @@ En las interfaces:
 
 Check it out
 
-()#show ipv6 route
-()#show ipv6 protocols
-()#show ipv6 eigrp neighbors
+()#show ipv6 route              //Analizar tabla de routing eigrp para ipv6
+()#show ipv6 protocols          //analizar parametros y estado actual de los procesos del protocolos de routing ipv6
+()#show ipv6 eigrp neighbors    //analizar adyacencias de vecinos
 
 Misc
 
