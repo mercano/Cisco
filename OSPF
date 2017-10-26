@@ -1,0 +1,13 @@
+OSPFv2 Básico
+
+Router>enable                                                     /Accedemos a Conf mode
+Router#conf ter                                                   /Idem
+Router(config)#router ospf 10                                     /Delaramos el uso de OSPF
+Router(config-router)#router-id 1.1.1.1                           /Definimos el id de Router
+Router(config-router)#network 172.16.1.0 0.0.0.255 area 0         /Declaramos las redes conectadas a las interfaces del Router
+Router(config-router)#network 172.16.3.0 0.0.0.3 area 0           /Declaramos las redes conectadas a las interfaces del Router
+Router(config-router)#network 192.168.10.4 0.0.0.3 area 0         /Declaramos las redes conectadas a las interfaces del Router
+Router(config-router)#passive-interface gi0/0                     /Indicamos que no se envien paquetes OSPF sobre esta Interfaz
+Router(config-router)#end                                         /Salimos de la configuracion
+
+
