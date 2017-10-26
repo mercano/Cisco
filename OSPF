@@ -8,6 +8,8 @@ Router(config-router)#router-id 1.1.1.1                           /Definimos el 
 Router(config-router)#network 172.16.1.0 0.0.0.255 area 0         /Declaramos las redes conectadas a las interfaces del Router
 Router(config-router)#network 172.16.3.0 0.0.0.3 area 0           /Declaramos las redes conectadas a las interfaces del Router
 Router(config-router)#network 192.168.10.4 0.0.0.3 area 0         /Declaramos las redes conectadas a las interfaces del Router
+//Como alternativa, todas las interfaces se pueden convertir en pasivas con el comandopassive-interface default. 
+//Las interfaces que no deben ser pasivas se pueden volver a habilitar con el comando no passive-interface
 Router(config-router)#passive-interface gi0/0                     /Indicamos que no se envien paquetes OSPF sobre esta Interfaz
 Router(config-router)#end                                         /Salimos de la configuracion
 
