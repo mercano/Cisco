@@ -13,5 +13,29 @@ Router(config-router)#network 192.168.10.4 0.0.0.3 area 0         /Declaramos la
 Router(config-router)#passive-interface gi0/0                     /Indicamos que no se envien paquetes OSPF sobre esta Interfaz
 Router(config-router)#end                                         /Salimos de la configuracion
 
-Ajuste del Ancho de Banda Predeterminado para Calculo del Costo:
+Router#show ip ospf neighbor                                      /verificar el estado de adyacencia de vecinos
+Router#show ip protocols                                          /muestra los protocolos y conexiones a redes
+Router#show ip ospf interface                                     /muestras las configuracion OSPF de las interfaces
+
+Ajuste del Ancho de Banda de Referencia Predeterminado para Calculo del Costo:
+
+Router>enable
+Router#conf term
+Router(config)#router ospf
+Router(config-router)#auto-cost reference-bandwidth 1000         //ejemplo para una tecnologia Gigabit
+RouteR(config-router)#auto-cost reference-bandwidth 10000        //ejemplo para una tecnologia 10gigabit
+
+Luego podemos ver el costo actualizado de cada interfaz, por ejemplo:
+Router#show ip ospf interface ser0/0/0
+
+Ajuste del Ancho de Bande de la Interfaz
+
+Router(config-if)#bandwidth 64                                   //ejemplo en el que asignamos 64Kb/s a una interfaz Serial
+Router(config-if)#bandwidth 1024                                 //ejemplo en el que asignamos 1024Kb/s a una interfaz Serial
+Router(config-if)#no bandwidth                                   //ejemplo para restaurar los valores predeterminados
+Router(config-if)#ip ospf cost 15625                             //Configuro directamente el costo ospf de la interfaz aun cuando
+                                                                 //el ancho de banda es el predeterminado
+                                                                 
+
+
 
