@@ -13,4 +13,5 @@ Router(config-router)#network 192.168.10.4 0.0.0.3 area 0         /Declaramos la
 Router(config-router)#passive-interface gi0/0                     /Indicamos que no se envien paquetes OSPF sobre esta Interfaz
 Router(config-router)#end                                         /Salimos de la configuracion
 
+Ajuste del Ancho de Banda Predeterminado para Calculo del Costo:
 
