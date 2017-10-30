@@ -1,7 +1,7 @@
 ________________________________________Basicos
 
 Evitar la resolucion de nombres cuando escribimos mal un comando:
-Router#no ip domain-lookup
+Router(config)#no ip domain-lookup
 
 
 
