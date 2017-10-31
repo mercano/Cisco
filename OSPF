@@ -37,5 +37,84 @@ Router(config-if)#ip ospf cost 15625                             //Configuro dir
                                                                  //el ancho de banda es el predeterminado
                                                                  
 
+OSPFv3
+
+***************Router1
+
+Router(config)#ipv6 unicast-routing
+Router(config)#interface gi0/0
+Router(config-if)#description R1 LAN
+Router(config-if)#ipv6 address 2001:db8:cafe:1::1/64
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/0
+Router(config-if)#description Link To R2
+Router(config-if)#ipv6 address 2001:db8:cafe:a001::1/64
+Router(config-if)#clock rate 128000                             //Only for DCE Interfaz
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/1
+Router(config-if)#description Link To R3
+Router(config-if)#ipv6 address 2001:db8:cafe:a003::1/64
+Router(config-if)#no shutdown
+Router(config-if)#end
+
+***************Router3
+
+Router(config)#ipv6 unicast-routing
+Router(config)#interface gi0/0
+Router(config-if)#description R3 LAN
+Router(config-if)#ipv6 address 2001:db8:cafe:3::1/64
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/0
+Router(config-if)#description Link To R1
+Router(config-if)#ipv6 address 2001:db8:cafe:a003::2/64
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/1
+Router(config-if)#description Link To R2
+Router(config-if)#clock rate 128000
+Router(config-if)#ipv6 address 2001:db8:cafe:a002::2/64
+Router(config-if)#no shutdown
+Router(config-if)#end
+
+****************Router2
+
+Router(config)#ipv6 unicast-routing
+Router(config)#interface gi0/0
+Router(config-if)#description R2 LAN
+Router(config-if)#ipv6 address 2001:db8:cafe:2::1/64
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/1
+Router(config-if)#description Link To R2
+Router(config-if)#ipv6 address 2001:db8:cafe:a002::1/64
+Router(config-if)#no shutdown
+Router(config-if)#interface ser0/0/0
+Router(config-if)#description Link To R1
+Router(config-if)#ipv6 address 2001:db8:cafe:a001::2/64
+Router(config-if)#no shutdown
+Router(config-if)#end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
