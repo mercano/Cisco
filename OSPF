@@ -93,6 +93,13 @@ Router(config-if)#no shutdown
 Router(config-if)#end
 
 
+Despues de Configurar todas las interfaces con sus direcciones IPv6 pasamos a configuramos el ruteo OSPF:
+
+Entramos en el modo de configuracion de Router:
+Router(config)#ipv6 router ospf id-proceso
+Configuramos los parametros globales de OSPFv3 como la ID de Router y el Ancho de banda de referencia
+Router(config-router)#router-id 1.1.1.1
+Router(config-router)#auto-cost reference-bandwidth 1000
 
 
 
