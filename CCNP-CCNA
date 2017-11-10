@@ -95,8 +95,11 @@ Configuracion básica de una ACE (Access List Estandar)
 R(config)#access-list 10 permit 192.168.10.0 0.0.0.255          //creamos una entrada en la ACL IPv4 estandar
 R(config)#access-list 10 remarks COMENTARIO_RELACIONADO_A_LA_LISTA_DE_ACCESO
 R(config)#interface ser0/0/0                                    //Accedemos a la interfaz para configurar la ACL
-R(config-if)#ip access-group 10 out                             //Activamos la ACL en la interfaz como filtro de Salida(out)
+R(config-if)#ip access-group 10 out                             //Activamos la ACL en la interfaz como filtro de Salida(out) ó (in)
 R(config)#no access-list 10                                     //Si necesitaramos eliminar la ACL
+R(config)#ip access-list standard "Nombre_ACL"                  //Configurar nombre de ACL en estandard
+R(config)#ip access-list extended "Nombre_ACL"                  //Configurar nombre de ACL en extendida
+
 
 
 
