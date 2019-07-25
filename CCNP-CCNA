@@ -1,7 +1,40 @@
 ________________________________________Basicos
 
-Evitar la resolucion de nombres cuando escribimos mal un comando:
+-Evitar la resolucion de nombres cuando escribimos mal un comando:
 Router(config)#no ip domain-lookup
+
+-Nombre de Host:
+Switch#conf term
+Switch(config)#hostname JamonesSwitch   //defino nombre
+JamonesSwitch(config)#no hostname       //elimino nombre de host
+
+-Restringir Acceso:
+
+R>enable                                //Restricción de acceso con contraseña al EXEC privilegiado
+R#conf term
+R(config)#enable secret contraseña
+R(config)#exit
+
+R(config)#line console 0                //Restriccion de Acceso a Consola
+R(config)#password contraseña
+R(config)#login
+
+R(config)#line vty 0 15                 //Restringimos el acceso mediante Telnet (Default 16 lineas)
+R(config-line)#password cisco
+R(config-line)#login
+
+-Startup-Config && Running-Config
+R#copy running-config startup-config    //copiar el archivo de configuracion en ejecucion al archivo de configuracion de inicio
+                                        //running-config(RAM) - startup-config(NVRAM)
+
+R#erase startup-config                  //borrar la configuracion de inicio (OJO ! use with Condom)
+
+SW#delete vlan.dat                      //En los SW debemos usar el comando delete vlan.dat junto con erase startup-config
+SW#erase startup-config
+
+
+SW(config)#interface vlan1                             //configurar ip en vlan1 para Acceso Remoto
+SW(config-if)#ip address 192.168.1.10 255.255.255.0    
 
 
 
